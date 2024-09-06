@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{84DFC61C-74B4-4CD8-9DAD-0161DAC81075}</ProjectGuid>
+    <ProjectGuid>{843FBCDF-5650-42E7-98DD-D23714D09F89}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>Parachute</RootNamespace>
     <AssemblyName>Parachute</AssemblyName>
@@ -44,6 +44,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Config.cs" />
+    <Compile Include="Para.cs" />
+    <Compile Include="Plane.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
