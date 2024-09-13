@@ -13,15 +13,25 @@ namespace Drones
             ApplicationConfiguration.Initialize();
 
             // Création de la flotte de drones
-            List<Drone> fleet= new List<Drone>();
+            List<Drone> fleet = new List<Drone>();
             Drone drone = new Drone();
             drone.X = 100;
             drone.Y = 100;
             drone.Name = "Joe";
             fleet.Add(drone);
 
+            // Création d'un building
+            List<Building> Buildings = new List<Building>();
+            for (int i = 1; i < 8; i++)
+            {
+                // Position du building et taille du building
+                Building building = new Building(aleaValueHelpers.AleaPosition(), aleaValueHelpers.AleaPosition(), Config.BUILDINGHEIGHT, Config.BUILDINGWIDTH);
+                Buildings.Add(building);
+
+            }
+
             // Démarrage
-            Application.Run(new AirSpace(fleet));
+            Application.Run(new AirSpace(fleet, Buildings));
         }
     }
 }

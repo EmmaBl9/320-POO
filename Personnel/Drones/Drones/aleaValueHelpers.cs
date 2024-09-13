@@ -13,5 +13,10 @@ namespace Drones
         {
             return Random.Next(-2, 3);
         }
+        public static int AleaPosition()
+        {
+            return Random.Next(0, 500);
+        }
+
     }
 }
