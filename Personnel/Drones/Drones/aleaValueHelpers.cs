@@ -11,7 +11,7 @@ namespace Drones
         public static Random Random = new Random();
         public static int AleaValue()
         {
-            return AleaValue.Next(-2, 3);
+            return Random.Next(-2, 3);
         }
     }
 }

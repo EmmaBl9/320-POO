@@ -7,7 +7,7 @@
 
         private int _charge = 1000;                     // La _charge actuelle de la batterie
         private string _name;                           // Un nom
-        private int _x;                                // Position en X depuis la gauche de l'espace aérien
+        private int _x;                                 // Position en X depuis la gauche de l'espace aérien
         private int _y;                                 // Position en Y depuis le haut de l'espace aérien
 
         public int Charge { get { return _charge; } set { _charge = value; } }
@@ -21,7 +21,7 @@
         public void Update(int interval)
         {
             _x += 2;                                    // Il s'est déplacé de 2 pixels vers la droite
-            _y += AleaValue();                     // Il s'est déplacé d'une valeur aléatoire vers le haut ou le bas
+            _y += aleaValueHelpers.AleaValue();         // Il s'est déplacé d'une valeur aléatoire vers le haut ou le bas
             _charge--;                                  // Il a dépensé de l'énergie
         }
 
