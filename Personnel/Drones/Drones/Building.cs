@@ -33,13 +33,13 @@ namespace Drones
         }
 
         // Couleur
-        private Pen buildingBrush = new Pen(new SolidBrush(Color.Black), 3);
+        private Pen buildingBrush = new Pen(new SolidBrush(Color.DarkGray), 3);
 
         // Afichage graphique
-        public void Render(BufferedGraphics drawingBuilding)
-        {
-            drawingBuilding.Graphics.DrawRectangle(buildingBrush, new Rectangle(_x, _y, _height, _width));
-        }
+        //public void Render(BufferedGraphics drawingBuilding)
+        //{
+            //drawingBuilding.Graphics.DrawRectangle(buildingBrush, new Rectangle(_x, _y, _height, _width));
+        //}
 
     }
 }

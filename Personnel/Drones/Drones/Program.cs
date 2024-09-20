@@ -1,3 +1,5 @@
+using Drones.Model;
+
 namespace Drones
 {
     internal static class Program
@@ -30,8 +32,16 @@ namespace Drones
 
             }
 
+            // Création de la flotte de drones
+            List<Factory> Factories = new List<Factory>();
+            Factory factory = new Factory();
+            factory.X = 100;
+            factory.Y = 100;
+            factory.Name = "Factory";
+            Factories.Add(factory);
+
             // Démarrage
-            Application.Run(new AirSpace(fleet, Buildings));
+            Application.Run(new AirSpace(fleet, Buildings, Factories));
         }
     }
 }
