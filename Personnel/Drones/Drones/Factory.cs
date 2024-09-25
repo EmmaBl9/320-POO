@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace Drones
 {
-    internal class Factory : Building
+    public partial class Factory : Building
     {
+        public Factory(int x, int y, int height, int width) : base(x, y, height, width)
+        {
+        }
     }
 }

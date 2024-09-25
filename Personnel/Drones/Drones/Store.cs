@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 
 namespace Drones
 {
-    internal class Store : Building
+    public partial class Store : Building
     {
         private Pen droneBrush = new Pen(new SolidBrush(Color.Purple), 3);
+
 
         // De manière graphique
         public void Render(BufferedGraphics drawingSpace)

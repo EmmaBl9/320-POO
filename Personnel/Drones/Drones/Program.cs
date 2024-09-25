@@ -22,6 +22,12 @@ namespace Drones
             drone.Name = "Joe";
             fleet.Add(drone);
 
+            Drone drone2 = new Drone();
+            drone.X = 100;
+            drone.Y = 100;
+            drone.Name = "Paul";
+            fleet.Add(drone2);
+
             // Création d'un building
             List<Building> Buildings = new List<Building>();
             for (int i = 1; i < 8; i++)
@@ -33,15 +39,13 @@ namespace Drones
             }
 
             // Création de la flotte de drones
-            List<Factory> Factories = new List<Factory>();
-            Factory factory = new Factory();
+            Factory factory = new Factory(10,10,10,10);
             factory.X = 100;
             factory.Y = 100;
-            factory.Name = "Factory";
-            Factories.Add(factory);
+            Buildings.Add(factory);
 
             // Démarrage
-            Application.Run(new AirSpace(fleet, Buildings, Factories));
+            Application.Run(new AirSpace(fleet, Buildings));
         }
     }
 }
