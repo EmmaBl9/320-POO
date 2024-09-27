@@ -1,4 +1,6 @@
 ﻿
+using System.Security.Policy;
+
 namespace Drones
 {
     // Cette partie de la classe Drone définit ce qu'est un drone par un modèle numérique
@@ -11,6 +13,9 @@ namespace Drones
         private int _x;                                 // Position en X depuis la gauche de l'espace aérien
         private int _y;                                 // Position en Y depuis le haut de l'espace aérien
         private bool _lowBattery;                       // Batterie faible
+        private Rectangle _NoFlightzone;
+        private Rectangle _zoneDrone;                   // Zone du drone
+        private EvacuationState _evacuationState;       // Evacuation du rectangle
 
         public int Charge { get { return _charge; } set { _charge = value; } }
         public string Name { get { return _name; } set { _name = value; } }
@@ -18,19 +23,42 @@ namespace Drones
         public int Y { get { return _y; } set { _y = value; } }
         public bool LowBattery { get { return _lowBattery; } }
 
+        public Drone(int x, int y)
+        {
+            _x = x;
+            _y = y;
+            _evacuationState = EvacuationState.Free;
+        }
+
         public bool Evacuate(Rectangle zone)
         {
-            throw new NotImplementedException();
+            _zoneDrone = new Rectangle(_x - 4, _y - 2, 8, 8);
+
+            _NoFlightzone = zone;
+
+            if (!zone.IntersectsWith(_zoneDrone))
+            {
+                _evacuationState = EvacuationState.Evacuated;
+                return true;
+            }
+            else
+            {
+                _evacuationState = EvacuationState.Evacuating;
+                return false;
+            }
+
         }
 
         public void FreeFlight()
         {
-            throw new NotImplementedException();
+            _NoFlightzone = Rectangle.Empty;
+            _evacuationState = EvacuationState.Free;
         }
 
         public EvacuationState GetEvacuationState()
         {
-            throw new NotImplementedException();
+
+            return _evacuationState;
         }
 
 
@@ -47,9 +75,9 @@ namespace Drones
             {
                 _lowBattery = true;
             }
-            else 
-            { 
-                _lowBattery = false; 
+            else
+            {
+                _lowBattery = false;
             }
         }
 

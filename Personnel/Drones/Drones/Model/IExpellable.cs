@@ -24,5 +24,6 @@ namespace Drones
 
         // Interrogate the drone
         public EvacuationState GetEvacuationState();
+
     }
 }
