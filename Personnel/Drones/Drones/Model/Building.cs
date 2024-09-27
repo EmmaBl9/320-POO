@@ -39,7 +39,18 @@ namespace Drones
         // Afichage graphique
         public void Render(BufferedGraphics drawingBuilding)
         {
-            drawingBuilding.Graphics.DrawRectangle(buildingBrush, new Rectangle(_x, _y, _height, _width));
+            if (// le building est une usine)
+            {
+                drawingBuilding.Graphics.DrawEllipse(buildingBrush, new Rectangle(_x, _y, _height, _width));
+            }
+            else if (// si le building est un magasin)
+            {
+
+            }
+            else
+            {
+                drawingBuilding.Graphics.DrawRectangle(buildingBrush, new Rectangle(_x, _y, _height, _width));
+            }
         }
 
     }

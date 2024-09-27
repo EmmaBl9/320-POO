@@ -1,4 +1,4 @@
-using Drones.Model;
+using Drones;
 
 namespace Drones
 {
@@ -36,7 +36,13 @@ namespace Drones
 
             }
 
-            // Création de la flotte de drones
+            // Création d'un magasin
+            Store store = new Store(10, 10, 10, 10);
+            store.X = 100;
+            store.Y = 100;
+            Buildings.Add(store);
+
+            // Création d'une usine
             Factory factory = new Factory(10, 10, 10, 10, Color.Purple);
             factory.X = 100;
             factory.Y = 100;
