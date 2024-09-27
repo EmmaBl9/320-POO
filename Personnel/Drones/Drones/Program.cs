@@ -16,17 +16,17 @@ namespace Drones
 
             // Création de la flotte de drones
             List<Drone> fleet = new List<Drone>();
+
+            //Drone 1
+            for (int i = 1; i <= 5; i++)
+            {
             Drone drone = new Drone();
-            drone.X = 100;
-            drone.Y = 100;
+            drone.X = aleaValueHelpers.AleaPosition();
+            drone.Y = aleaValueHelpers.AleaPosition();
             drone.Name = "Joe";
             fleet.Add(drone);
+            }
 
-            Drone drone2 = new Drone();
-            drone.X = 100;
-            drone.Y = 100;
-            drone.Name = "Paul";
-            fleet.Add(drone2);
 
             // Création d'un building
             List<Building> Buildings = new List<Building>();
@@ -39,13 +39,22 @@ namespace Drones
             }
 
             // Création de la flotte de drones
-            Factory factory = new Factory(10,10,10,10);
+            Factory factory = new Factory(10,10,10,10,Color.Purple);
             factory.X = 100;
             factory.Y = 100;
             Buildings.Add(factory);
 
-            // Démarrage
-            Application.Run(new AirSpace(fleet, Buildings));
+            try
+            {
+                 Application.Run(new AirSpace(fleet, Buildings));
+
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                Console.ReadLine();
+            }
+
         }
     }
 }

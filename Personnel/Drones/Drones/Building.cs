@@ -25,6 +25,7 @@ namespace Drones
             _y = y;
             _height = height;
             _width = width;
+
         }
 
         public void Update(int interval)

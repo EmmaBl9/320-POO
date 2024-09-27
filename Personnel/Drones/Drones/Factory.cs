@@ -8,7 +8,8 @@ namespace Drones
 {
     public partial class Factory : Building
     {
-        public Factory(int x, int y, int height, int width) : base(x, y, height, width)
+        //Constructeur
+        public Factory(int x, int y, int height, int width, Color color) : base(x, y, height, width)
         {
         }
     }

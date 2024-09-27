@@ -15,9 +15,15 @@ namespace Drones
         BufferedGraphicsContext currentContext;
         BufferedGraphics airspace;
 
-        // Initialisation de l'espace aérien avec un certain nombre de drones
+        // (Constructeur) Initialisation de l'espace aérien avec un certain nombre de drones
         public AirSpace(List<Drone> fleet, List<Building> Buildings)
         {
+            if(fleet.Count > 10)
+            {
+                throw new Exception("Le nombre de drônes ne doit pas être plus grand que 10.");
+            }
+            
+
             InitializeComponent();
             // Gets a reference to the current BufferedGraphicsContext
             currentContext = BufferedGraphicsManager.Current;
