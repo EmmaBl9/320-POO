@@ -39,10 +39,13 @@ namespace Drones
             // Création d'une usine
             for (int i = 1; i < 5; i++)
             {
-                Factory factory = new Factory(aleaValueHelpers.AleaPosition(), aleaValueHelpers.AleaPosition(), Config.BUILDINGHEIGHT, Config.BUILDINGWIDTH);
+                Factory factory = new Factory(aleaValueHelpers.AleaPosition(), aleaValueHelpers.AleaPosition(), Config.BUILDINGHEIGHT, Config.BUILDINGWIDTH, i);
                 factory.Color = Color.DeepPink;
                 Buildings.Add(factory);
             }
+
+            // Création des boxes
+            List<Box> boxes = new List<Box>();
 
             // Test pour le lancement
             try
