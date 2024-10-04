@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace Drones
 {
-    public partial class Store : Building
+    public class Store : Building
     {
         private decimal _openingHours;                //Consomation d'énergie
 
-        public Store(int x, int y, int height, int width) : base(x, y, height, width)
+        public Store(int x, int y, int height, int width) : base (x, y, height, width)
         {
         }
 

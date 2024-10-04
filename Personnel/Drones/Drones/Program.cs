@@ -25,29 +25,26 @@ namespace Drones
                 fleet.Add(drone);
             }
 
-
             // Création d'un building
             List<Building> Buildings = new List<Building>();
-            for (int i = 1; i < 8; i++)
-            {
-                // Position du building et taille du building
-                Building building = new Building(aleaValueHelpers.AleaPosition(), aleaValueHelpers.AleaPosition(), Config.BUILDINGHEIGHT, Config.BUILDINGWIDTH);
-                Buildings.Add(building);
-
-            }
 
             // Création d'un magasin
-            Store store = new Store(10, 10, 10, 10);
-            store.X = 100;
-            store.Y = 100;
-            Buildings.Add(store);
+            for (int i = 1; i < 5; i++)
+            {
+                Store store = new Store(aleaValueHelpers.AleaPosition(), aleaValueHelpers.AleaPosition(), Config.BUILDINGHEIGHT, Config.BUILDINGWIDTH);
+                store.Color = Color.Purple;
+                Buildings.Add(store);
+            }
 
             // Création d'une usine
-            Factory factory = new Factory(10, 10, 10, 10, Color.Purple);
-            factory.X = 100;
-            factory.Y = 100;
-            Buildings.Add(factory);
+            for (int i = 1; i < 5; i++)
+            {
+                Factory factory = new Factory(aleaValueHelpers.AleaPosition(), aleaValueHelpers.AleaPosition(), Config.BUILDINGHEIGHT, Config.BUILDINGWIDTH);
+                factory.Color = Color.DeepPink;
+                Buildings.Add(factory);
+            }
 
+            // Test pour le lancement
             try
             {
                 Application.Run(new AirSpace(fleet, Buildings));

@@ -32,6 +32,7 @@ namespace Drones
             airspace = currentContext.Allocate(this.CreateGraphics(), this.DisplayRectangle);
             this.fleet = fleet;
             this.buildings = Buildings;
+
         }
 
         // Affichage de la situation actuelle
@@ -45,12 +46,18 @@ namespace Drones
                 drone.Render(airspace);
             }
 
-            //draw building
-            foreach (Building building in buildings)
+            // Draw usine
+            foreach(Building building in buildings)
             {
-                building.Render(airspace);
+                if (building.GetType() == typeof(Store))
+                {
+                    building.Render(airspace, true);
+                }
+                else
+                {
+                    building.Render(airspace, false);
+                }
             }
-
             airspace.Render();
         }
 
