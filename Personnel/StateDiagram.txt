@@ -1,0 +1,16 @@
+2 types de doc :
+- digramme de classe (info sup : association : aggregation ou composition)
+- mannuel de référence
+
+diagramme de classe :
+- créer le doc avec draw.io
+ou
+- Dans vs2022, ajouter un nouvel élement diagramme de classe, si on a pas faut installer depuis le visual code installer. 
+	-> ne marque pas les relations d'aggregation, clique droit sur l'élement, impression en pdf (mieux en png) puis ajout des 
+	   relations à la main (fleche : -- et losange en direction de la classe parent)
+ou 
+ctrl a des classes, donner à chatgpt, lui demander le script plantuml pour un diagramme de classe, copier, aller sur le site plantuml, 
+coller, ça génère le diagramme, enregistrer l'image
+
+mannuel de référence :
+se fait en ligne de commande (cmd, etc...) C : se placer dans le repertoire où est present le projet, entrer dotnet
